@@ -9,9 +9,23 @@ class CompanyController extends Controller
 {
     
 	public function index() {
-		$companies = Company::all();
-
+		$companies = Company::all();		
 		return view('companies.index', compact('companies'));
+	}
+
+	public function create() {
+		return view('companies.create');
+	}
+
+	public function store(Request $request) {
+		$company = new Company;
+		$company->name = $request->get('name');
+		$company->email = $request->get('email');
+		$company->website = $request->get('website');
+		$company->address = $request->get('address');
+		$company->save();
+
+		return redirect('companies');
 	}
 
 }
