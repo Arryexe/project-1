@@ -42,4 +42,22 @@ class CompanyController extends Controller
 		return redirect('companies');
 	}
 
+	public function edit($id) {
+		$company = Company::find($id);
+
+		return view('companies.edit', compact('company'));
+	}
+
+	public function update(Request $request, $id){
+		$company = Company::find($id);
+
+		$company->name = $request->get('name');
+		$company->email = $request->get('email');
+		$company->website = $request->get('website');
+		$company->address = $request->get('address');
+		$company->save();
+
+		return redirect('companies/'.$company->id);
+	}
+
 }

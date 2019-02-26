@@ -8,7 +8,10 @@
 		<div class="row">
 			<div class="col-5">
 				<div class="card">
-					<div class="card-header">{{ $company->name }} Detail</div>
+					<div class="card-header">
+						{{ $company->name }} Detail
+						<a href="{{ url('companies/'. $company->id .'/edit') }}" class="float-right">Edit this Company</a>
+					</div>
 
 					<div class="card-body">
 						<table class="table">
