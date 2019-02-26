@@ -10,11 +10,12 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<th>No.</td>
-					<th>Company Name</td>
-					<th>Email</td>
-					<th>Website</td>
-					<th>Address</td>
+					<th>No.</th>
+					<th>Company Name</th>
+					<th>Email</th>
+					<th>Website</th>
+					<th>Address</th>
+					<th>Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,6 +30,9 @@
 						<td>{{ $company->email }}</td>
 						<td>{{ $company->website }}</td>
 						<td>{{ $company->address }}</td>
+						<td>
+							<a href="{{ url('companies/'.$company->id) }}">View Detail</a>
+						</td>
 					</tr>
 				<?php endforeach ?>
 			</tbody>
