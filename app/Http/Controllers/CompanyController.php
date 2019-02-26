@@ -8,8 +8,15 @@ use Illuminate\Http\Request;
 class CompanyController extends Controller
 {
     
-	public function index() {
-		$companies = Company::all();		
+	public function index(Request $request) {
+		$searchKeyword = '%'.$request->get('search').'%';
+
+		$companies = Company::where('name', 'like', $searchKeyword)
+		->orWhere('email', 'like', $searchKeyword)
+		->orWhere('website', 'like', $searchKeyword)
+		->orWhere('address', 'like', $searchKeyword)
+		->get();
+
 		return view('companies.index', compact('companies'));
 	}
 
