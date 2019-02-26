@@ -34,6 +34,10 @@
 					</div>
 				</div>			
 			</div>
+
+			<div class="col-7">
+				<a href="{{ url('companies') }}" class="btn btn-secondary float-right">Kembali</a>
+			</div>
 		</div>
 	</div>	
 
