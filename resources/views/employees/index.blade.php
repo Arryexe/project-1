@@ -4,7 +4,7 @@
 
 	<div class="card">
 		<div class="card-header">
-			<h3>Employee List</h3>
+			<h3>Employee Listing</h3>
 
 			<form action="" method="get">
 				<div class="row">

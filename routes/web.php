@@ -38,3 +38,5 @@ Route::get('employees/{id}', 'EmployeeController@show');
 
 Route::get('employees/{id}/change', 'EmployeeController@change');
 Route::patch('employees/{id}', 'EmployeeController@update');
+
+Route::delete('employees/{id}', 'EmployeeController@destroy');

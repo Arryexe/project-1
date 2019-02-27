@@ -39,12 +39,17 @@
 							</tr>
 						</tbody>
 					</table>
+						<form action="{{ url('employees/'. $employees->id) }}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure to Delete this Employee?')">
+{{ csrf_field() }} {{ method_field('DELETE') }}
+						<button class="btn btn-danger float-right">Delete this Employee Profile</button>
+						</form>
 				</div>
 			</div>		
 		</div>
 
 		<div class="col-7">
-			<a href="{{ url('employees') }}" class="btn btn-dark float-right">Back to Employees List</a>
+				<a href="{{ url('employees') }}" class="btn btn-dark float-right">Back to Employees List</a>
+			</div>
 		</div>
 	</div>
 
