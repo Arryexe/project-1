@@ -32,3 +32,5 @@ Route::delete('companies/{id}', 'CompanyController@destroy');
 
 // Route Employees
 Route::get('employees', 'EmployeeController@index');
+Route::get('employees/insert', 'EmployeeController@insert');
+Route::post('employees', 'EmployeeController@store');
