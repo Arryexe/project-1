@@ -7,6 +7,7 @@
 			<div class="card">
 				<div class="card-header">
 					{{ $employees->first_name }} {{ $employees->last_name }} Detail
+					<a href="{{ url('employees/'. $employees->id .'/change') }}" class="float-right">Change this Profile</a>
 				</div>
 
 				<div class="card-body">

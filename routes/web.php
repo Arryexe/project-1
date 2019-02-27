@@ -35,3 +35,6 @@ Route::get('employees', 'EmployeeController@index');
 Route::get('employees/insert', 'EmployeeController@insert');
 Route::post('employees', 'EmployeeController@store');
 Route::get('employees/{id}', 'EmployeeController@show');
+
+Route::get('employees/{id}/change', 'EmployeeController@change');
+Route::patch('employees/{id}', 'EmployeeController@update');
