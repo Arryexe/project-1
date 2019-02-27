@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+// Route Company
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('companies', 'CompanyController@index');
 Route::get('companies/create', 'CompanyController@create');
@@ -27,3 +29,6 @@ Route::get('companies/{id}/edit', 'CompanyController@edit');
 Route::patch('companies/{id}', 'CompanyController@update');
 
 Route::delete('companies/{id}', 'CompanyController@destroy');
+
+// Route Employees
+Route::get('employees', 'EmployeeController@index');
