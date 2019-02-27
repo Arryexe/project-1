@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    
+
 	public function index(Request $request) {
 		$searchKeyword = '%'.$request->get('search').'%';
 
@@ -39,6 +39,12 @@ class EmployeeController extends Controller
 		$employees->save();
 
 		return redirect('employees');
+	}
+
+	public function show($id) {
+		$employees = Employe::find($id);
+
+		return view('employees.show', compact('employees'));
 	}
 
 }

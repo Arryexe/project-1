@@ -29,6 +29,7 @@
 					<th>Full Name</th>
 					<th>Email</th>
 					<th>Phone Number</th>
+					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -44,6 +45,9 @@
 						<td>{{ $employe->first_name }} {{ $employe->last_name }}</td>
 						<td>{{ $employe->email }}</td>
 						<td>{{ $employe->phone1 }}-{{ $employe->phone2 }}-{{ $employe->phone3 }}</td>
+						<td>
+							<a href="{{ url('employees/'. $employe->id) }}">View Detail</a>
+						</td>
 					</tr>
 				@endforeach
 			</tbody>
