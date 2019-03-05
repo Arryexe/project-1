@@ -34,22 +34,56 @@
 								</tr>
 							</tbody>
 						</table>
+
+						<form action="{{ url('companies/'. $company->id) }}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure to delete this company?')">
+{{ csrf_field() }} {{ method_field('DELETE') }}
+							<button class="btn btn-danger float-right">Delete this Company</button>
+						</form>
 					</div>
-				</div>			
+				</div>
+
+				<div style="margin-top: 10px;">
+					<a href="{{ url('companies') }}" class="btn btn-secondary">Go Back to Company List</a>
+				</div>
+
 			</div>
-			
 			<div class="col-7">
-				<div class="float-right">
+				<div class="card">
+            		<div class="card-header">Employe List</div>
+						<table class="table">
+							<thead>
+								<tr class="text-center">
+									<th>No.</th>
+									<th>Name</th>
+									<th>Company</th>
+									<th>Action</th>
+								</tr>
+							</thead>
 
-					<form action="{{ url('companies/'. $company->id) }}" method="post" style="display: inline;" onsubmit="return confirm('Are you sure to delete this company?')">
-						{{ csrf_field() }} {{ method_field('DELETE') }}
-						<button class="btn btn-danger">Delete this Company</button>
-					</form>
+							<tbody>
 
-					<a href="{{ url('companies') }}" class="btn btn-secondary">Back</a>
+								@php
+									$no = 1;
+								@endphp
+								@forelse ($company->employes as $employe)
+									<tr class="text-center">
+										<td>{{ $no++ }}</td>
+										<td>{{ $employe->first_name }} {{ $employe->last_name }}</td>
+										<td>{{ $employe->email }}</td>
+										<td>
+											<a href="{{ url('employees/'. $employe->id) }}">View Detail</a>
+										</td>
+									</tr>
+								@empty
+									<tr>
+										<td colspan="4" class="text-center">There's Still no Employee Here...</td>
+									</tr>
+								@endforelse
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
-			
 		</div>
 	</div>	
 

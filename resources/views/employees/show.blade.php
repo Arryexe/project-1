@@ -52,8 +52,8 @@
 		</div>
 
 		<div class="col-7">
-				<a href="{{ url('employees') }}" class="btn btn-dark float-right">Back to Employees List</a>
-			</div>
+			<a href="{{ url('employees') }}" class="btn btn-dark float-right">Back to Employees List</a>
+		</div>
 		</div>
 	</div>
 
