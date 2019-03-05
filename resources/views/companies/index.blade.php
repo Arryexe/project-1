@@ -19,12 +19,13 @@
 		</div>
 		<table class="table">
 			<thead>
-				<tr>
+				<tr align="center">
 					<th>No.</th>
 					<th>Company Name</th>
 					<th>Email</th>
 					<th>Website</th>
 					<th>Address</th>
+					<th>Employees</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -34,12 +35,13 @@
 					$no = 1;
 				?>
 				<?php foreach ($companies as $company): ?>
-					<tr>
+					<tr align="center">
 						<td>{{ $no++ }}</td>
 						<td>{{ $company->name }}</td>
 						<td>{{ $company->email }}</td>
 						<td>{{ $company->website }}</td>
 						<td>{{ $company->address }}</td>
+						<td>{{ $company->employes_count }}</td>
 						<td>
 							<a href="{{ url('companies/'.$company->id) }}">View Detail</a>
 						</td>
