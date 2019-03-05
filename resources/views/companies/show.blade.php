@@ -65,13 +65,13 @@
 								@php
 									$no = 1;
 								@endphp
-								@forelse ($company->employes as $employe)
+								@forelse ($company->employes as $employee)
 									<tr class="text-center">
 										<td>{{ $no++ }}</td>
-										<td>{{ $employe->first_name }} {{ $employe->last_name }}</td>
-										<td>{{ $employe->email }}</td>
+										<td>{{ $employee->name }}</td>
+										<td>{{ $employee->email }}</td>
 										<td>
-											<a href="{{ url('employees/'. $employe->id) }}">View Detail</a>
+											<a href="{{ url('employees/'. $employee->id) }}">View Detail</a>
 										</td>
 									</tr>
 								@empty

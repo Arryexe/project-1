@@ -37,7 +37,7 @@
 				@foreach ($employees as $employe)
 					<tr align="center">
 						<td>{{ $no++ }}</td>
-						<td>{{ $employe->first_name }} {{ $employe->last_name }}</td>						
+						<td>{{ $employe->name }}</td>						
 						<td>{{ $employe->company->name }}</td>
 						<td>
 							<a href="{{ url('employees/'. $employe->id) }}">View Detail</a>

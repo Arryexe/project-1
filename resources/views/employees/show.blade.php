@@ -6,7 +6,7 @@
 		<div class="col-5">
 			<div class="card">
 				<div class="card-header">
-					{{ $employees->first_name }} {{ $employees->last_name }} Detail
+					{{ $employees->name }} Detail
 					<a href="{{ url('employees/'. $employees->id .'/change') }}" class="float-right">Change this Profile</a>
 				</div>
 
@@ -29,7 +29,7 @@
 
 							<tr>
 								<th>Full Name</th>
-								<td>{{ $employees->first_name }} {{ $employees->last_name }}</td>
+								<td>{{ $employees->name }}</td>
 							</tr>
 
 							<tr>
@@ -39,7 +39,7 @@
 
 							<tr>
 								<th>Phone</th>
-								<td>{{ $employees->phone1 }}-{{ $employees->phone2 }}-{{ $employees->phone3 }}</td>
+								<td>{{ $employees->phone }}</td>
 							</tr>
 						</tbody>
 					</table>
