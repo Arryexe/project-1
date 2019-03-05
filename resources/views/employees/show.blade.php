@@ -14,6 +14,10 @@
 					<table class="table">
 						<tbody>
 							<tr>
+								<th>Company</th>
+								<td>{{ $employees->company->name }}</td>
+							</tr>
+							<tr>
 								<th>First Name</th>
 								<td>{{ $employees->first_name }}</td>
 							</tr>
