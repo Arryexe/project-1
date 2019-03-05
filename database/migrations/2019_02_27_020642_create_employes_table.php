@@ -17,10 +17,12 @@ class CreateEmployesTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email');            
+            $table->string('email');
             $table->string('phone1');
             $table->string('phone2');
             $table->string('phone3');
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
             $table->timestamps();
         });
     }
