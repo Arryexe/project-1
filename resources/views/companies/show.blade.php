@@ -46,7 +46,7 @@
 						<button class="btn btn-danger">Delete this Company</button>
 					</form>
 
-					<a href="{{ url('companies') }}" class="btn btn-secondary">Kembali</a>
+					<a href="{{ url('companies') }}" class="btn btn-secondary">Back</a>
 				</div>
 			</div>
 			
