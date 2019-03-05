@@ -52,7 +52,10 @@
 		</div>
 
 		<div class="col-7">
-			<a href="{{ url('employees') }}" class="btn btn-dark float-right">Back to Employees List</a>
+			<div class="float-right">
+				<a href="{{ url('employees') }}" class="btn btn-dark text-right">Back to Employees List</a>
+				<a href="{{ url('companies/'. $employees->company->id) }}" class="btn btn-dark text-right">Back to Company Detail</a>
+			</div>
 		</div>
 		</div>
 	</div>
