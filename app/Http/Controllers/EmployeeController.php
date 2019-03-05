@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Employe;
+use App\Company;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -49,13 +50,15 @@ class EmployeeController extends Controller
 
 	public function change($id) {
 		$employees = Employe::find($id);
+		$companies = company::all();
 
-		return view('employees.change', compact('employees'));
+		return view('employees.change', compact('employees', 'companies'));
 	}
 
 	public function update(Request $request, $id) {
 		$employees = Employe::find($id);
 
+		$employees->company_id = $request->get('company_id');
 		$employees->first_name = $request->get('first_name');
 		$employees->last_name = $request->get('last_name');
 		$employees->email = $request->get('email');
