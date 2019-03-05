@@ -22,13 +22,10 @@
 		</div>
 		<table class="table">
 			<thead>
-				<tr>
+				<tr align="center">
 					<th>No. </th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Full Name</th>
-					<th>Email</th>
-					<th>Phone Number</th>
+					<th>Name</th>
+					<th>Company</th>
 					<th>Action</th>
 				</tr>
 			</thead>
@@ -38,13 +35,10 @@
 				@endphp
 				
 				@foreach ($employees as $employe)
-					<tr>
+					<tr align="center">
 						<td>{{ $no++ }}</td>
-						<td>{{ $employe->first_name }}</td>
-						<td>{{ $employe->last_name }}</td>
-						<td>{{ $employe->first_name }} {{ $employe->last_name }}</td>
-						<td>{{ $employe->email }}</td>
-						<td>{{ $employe->phone1 }}-{{ $employe->phone2 }}-{{ $employe->phone3 }}</td>
+						<td>{{ $employe->first_name }} {{ $employe->last_name }}</td>						
+						<td>{{ $employe->company->name }}</td>
 						<td>
 							<a href="{{ url('employees/'. $employe->id) }}">View Detail</a>
 						</td>

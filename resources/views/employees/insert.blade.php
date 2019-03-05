@@ -24,6 +24,16 @@
 								<input type="email" name="email" class="form-control" required>
 							</div>
 
+							<div class="form-group">
+								<label for="company_id" class="form-label">Company</label>
+								<select name="company_id" id="company_id" class="form-control">
+									<option>-- Select Option --</option>
+									@foreach ($companies as $company)
+										<option value="{{ $company->id }}">{{ $company->name }}</option>
+									@endforeach
+								</select>
+							</div>
+
 							<div class="form-grup">
 								<div class="container" style="margin-top: 20px;">
 									<label for="phone1" class="form-label" style="display: inline;">Phone Number</label>
